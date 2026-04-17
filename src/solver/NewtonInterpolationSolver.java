@@ -4,6 +4,10 @@ import model.InterpolationResult;
 
 public class NewtonInterpolationSolver {
 
+    /**
+     * Membangun polinom interpolasi Newton dari titik-titik data (x, y) menggunakan tabel beda terbagi,
+     * lalu mengevaluasi polinom tersebut pada nilai target yang diberikan.
+     */
     public static InterpolationResult solve(double[] x, double[] y, double target) {
         int n = x.length;
         double[][] table = new double[n][n];

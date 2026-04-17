@@ -6,6 +6,11 @@ import java.util.Map;
 
 public class SecantSolver {
 
+    /**
+     * Mencari akar persamaan f(x) = 0 menggunakan metode Secant.
+     * Menggunakan dua tebakan awal (x0, x1) dan menarik garis secant untuk memperkirakan akar baru.
+     * Tidak memerlukan turunan fungsi. Berhenti saat selisih iterasi atau f(x) < toleransi.
+     */
     public static RootResult solve(ExpressionParser f, double x0, double x1, double tol, int maxIter) {
         StringBuilder log = new StringBuilder("=== METODE SECANT ===\n\n");
         double x2 = x1;

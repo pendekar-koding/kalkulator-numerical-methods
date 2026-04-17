@@ -5,6 +5,10 @@ import java.util.Arrays;
 
 public class GaussEliminationSolver {
 
+    /**
+     * Menyelesaikan sistem persamaan linear Ax = b menggunakan Eliminasi Gauss dengan partial pivoting.
+     * Matriks direduksi ke bentuk segitiga atas, lalu solusi diperoleh melalui substitusi balik.
+     */
     public static GaussResult solve(double[][] A, double[] b) {
         int n = A.length;
         double[][] a = copyMatrix(A);
@@ -47,12 +51,14 @@ public class GaussEliminationSolver {
         return new GaussResult(x, steps.toString());
     }
 
+    /** Membuat deep copy dari matriks 2D agar matriks asli tidak termodifikasi. */
     private static double[][] copyMatrix(double[][] src) {
         double[][] copy = new double[src.length][src[0].length];
         for (int i = 0; i < src.length; i++) copy[i] = Arrays.copyOf(src[i], src[i].length);
         return copy;
     }
 
+    /** Memformat matriks augmented [A|b] menjadi string untuk ditampilkan sebagai log langkah. */
     private static String formatAugmentedMatrix(double[][] a, double[] b) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < a.length; i++) {

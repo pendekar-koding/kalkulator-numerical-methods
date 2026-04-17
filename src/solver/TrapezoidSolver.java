@@ -6,6 +6,10 @@ import java.util.Map;
 
 public class TrapezoidSolver {
 
+    /**
+     * Menghampiri nilai integral tentu ∫[a,b] f(x) dx menggunakan aturan Trapesium komposit.
+     * Interval [a, b] dibagi menjadi n sub-interval, setiap sub-interval dihampiri sebagai trapesium.
+     */
     public static TrapezoidResult solve(ExpressionParser f, double a, double b, int n) {
         if (n <= 0) throw new IllegalArgumentException("Jumlah segmen n harus > 0.");
         double h = (b - a) / n;

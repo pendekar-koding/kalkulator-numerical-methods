@@ -5,6 +5,11 @@ import java.util.Arrays;
 
 public class GaussSeidelSolver {
 
+    /**
+     * Menyelesaikan sistem persamaan linear Ax = b secara iteratif menggunakan metode Gauss-Seidel.
+     * Setiap iterasi memperbarui nilai x menggunakan nilai terbaru yang sudah dihitung.
+     * Berhenti saat error < toleransi atau mencapai batas iterasi maksimum.
+     */
     public static SeidelResult solve(double[][] A, double[] b, double[] x0, double tol, int maxIter) {
         int n = A.length;
         double[] x = Arrays.copyOf(x0, x0.length);

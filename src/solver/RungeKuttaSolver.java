@@ -6,6 +6,11 @@ import java.util.Map;
 
 public class RungeKuttaSolver {
 
+    /**
+     * Menyelesaikan ODE y' = f(x, y) menggunakan metode Runge-Kutta orde 4 (RK4).
+     * Dari kondisi awal (x0, y0), menghitung 4 koefisien (k1-k4) setiap langkah
+     * untuk memperbarui nilai y dengan akurasi O(h⁴).
+     */
     public static RungeKuttaResult solve(ExpressionParser f, double x0, double y0, double h, int steps) {
         if (steps <= 0) throw new IllegalArgumentException("Jumlah langkah harus > 0.");
         StringBuilder log = new StringBuilder("=== METODE RUNGE-KUTTA ORDE 4 ===\n\n");

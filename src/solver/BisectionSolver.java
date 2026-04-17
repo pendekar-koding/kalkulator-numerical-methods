@@ -6,6 +6,11 @@ import java.util.Map;
 
 public class BisectionSolver {
 
+    /**
+     * Mencari akar persamaan f(x) = 0 menggunakan metode Bagi Dua (Bisection).
+     * Interval [a, b] dibagi dua berulang kali, dipilih sub-interval yang mengandung akar
+     * berdasarkan perubahan tanda f(a) dan f(b). Berhenti saat f(c) atau lebar interval < toleransi.
+     */
     public static RootResult solve(ExpressionParser f, double a, double b, double tol, int maxIter) {
         double fa = f.evaluate(Map.of("x", a));
         double fb = f.evaluate(Map.of("x", b));
